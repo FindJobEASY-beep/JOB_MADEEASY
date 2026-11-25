@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Hiring File — 200+ companies currently hiring</title>
+  <meta name="description" content="Pay ₹20 and read the hiring list on this page after payment is confirmed.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,650&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#top">The Hiring File</a>
+    <p class="updated" data-slot="updated">Updated 25 November 2026</p>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div>
+        <p class="kicker">View on this page · India</p>
+        <h1><span data-slot="count">200+</span> companies currently hiring, with a link to apply at each one.</h1>
+        <p class="lead">Pay <strong data-slot="price">₹20</strong>. When Razorpay confirms the payment, the full list opens on this page: 250 companies, 65 direct job links, openings, and apply portals. There is no file to download or forward.</p>
+        <div class="hero-actions">
+          <button class="pay" type="button" data-open-pay>Pay ₹20 and unlock the list</button>
+          <button class="text-button" type="button" data-open-recover>Already paid?</button>
+        </div>
+        <p class="status" data-status role="status"></p>
+      </div>
+
+      <aside class="ticket" aria-label="What you get">
+        <div class="stamp">Opens<br>here</div>
+        <p class="ticket-label">Price</p>
+        <p class="ticket-price" data-slot="price">₹20</p>
+        <ul>
+          <li>65 direct job links</li>
+          <li>250 companies and where to apply</li>
+          <li>Openings checked, plus apply portals</li>
+          <li>Stays on this page after payment</li>
+        </ul>
+        <p class="fine">No subscription. The list stays open on this browser for 24 hours after payment. There is no Excel or PDF to send to someone else.</p>
+      </aside>
+    </section>
+
+    <section class="banner" data-setup hidden>
+      <strong>Payments are not connected on this server yet.</strong>
+      <span>Copy <code>.env.example</code> to <code>.env</code>, add your Razorpay Key ID and Key Secret, then restart. Keys are in the Razorpay dashboard under Account &amp; Settings → API Keys.</span>
+    </section>
+
+    <section class="banner test" data-test hidden>
+      Test mode is on. No real money is charged. In the payment window, open <strong>Cards</strong> and use card <strong>4100 2800 0000 1007</strong>, expiry <strong>12/30</strong>, CVV <strong>123</strong>. On the next page enter OTP <strong>1234</strong>.
+    </section>
+
+    <section class="banner test" data-ready hidden>
+      <strong>Payment confirmed. The full list is open on this page.</strong>
+      <div class="hero-actions">
+        <a class="pay" href="#list">Open the list</a>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="List summary">
+      <div><strong data-slot="count">200+</strong><span>companies</span></div>
+      <div><strong data-slot="industries">12</strong><span>industries</span></div>
+      <div><strong>Direct</strong><span>careers links</span></div>
+      <div><strong data-slot="price">₹20</strong><span>one time</span></div>
+    </section>
+
+    <section class="panel" id="list" data-list hidden>
+      <div class="panel-head">
+        <h2>Your list</h2>
+        <p>The same sheets as the Excel file, open on this page only. There is no file to download or share.</p>
+      </div>
+      <label class="search">Search
+        <input data-search type="search" placeholder="Company, role, or city" autocomplete="off">
+      </label>
+      <div class="tabs" data-tabs></div>
+      <p class="more" data-sheet-detail></p>
+      <div class="table-wrap" data-table></div>
+    </section>
+
+    <section class="panel" id="preview">
+      <div class="panel-head">
+        <h2>A look inside</h2>
+        <p>Eight companies are open below. The rest of the list opens on this page after payment.</p>
+      </div>
+      <div class="rows" data-preview></div>
+      <p class="more" data-more>The rest of the list opens here after payment.</p>
+    </section>
+
+    <section class="steps">
+      <h2>How it works</h2>
+      <ol>
+        <li>
+          <span>1</span>
+          <div>
+            <h3>Pay ₹20</h3>
+            <p>UPI, debit card, credit card, or netbanking. Razorpay handles the payment.</p>
+          </div>
+        </li>
+        <li>
+          <span>2</span>
+          <div>
+            <h3>Wait for confirmation</h3>
+            <p>The list stays locked until Razorpay confirms this exact payment. Closing the window early does not unlock it.</p>
+          </div>
+        </li>
+        <li>
+          <span>3</span>
+          <div>
+            <h3>Read it on this page</h3>
+            <p>The companies, job links, openings, and apply portals appear here. Nothing is saved as a file.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <div class="panel-head">
+        <h2>Industries in the list</h2>
+        <p>Counts update from the list on this server.</p>
+      </div>
+      <div class="chips" data-industries></div>
+    </section>
+
+    <section class="warning">
+      <h2>Do not pay a stranger for a job</h2>
+      <p>This ₹20 is only for viewing the list on this website. Apply free on the company website. Ignore anyone who asks for a deposit, fee, or OTP in exchange for an offer letter.</p>
+    </section>
+
+    <section class="faq">
+      <h2>Questions</h2>
+      <details open>
+        <summary>When do I see the list?</summary>
+        <p>Immediately after Razorpay confirms the payment, on this page. If the browser closes first, choose Already paid and enter the Payment ID from your SMS or email, plus the same email you paid with.</p>
+      </details>
+      <details>
+        <summary>What is in the list?</summary>
+        <p>Direct job links, 250 companies with their job boards, openings that were checked, and apply portals. It is shown on this page. There is no Excel or PDF to download.</p>
+      </details>
+      <details>
+        <summary>Are the jobs guaranteed to still be open?</summary>
+        <p>No. Companies change openings every day. Each row links to the company’s own page so you can see what is open right now.</p>
+      </details>
+      <details>
+        <summary>Can I share one payment with many people?</summary>
+        <p>The list is meant for the person who paid, on this browser. There is no file to forward. Someone else would need their own payment.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p>The Hiring File is a directory of public careers pages. It is not affiliated with the companies listed, and it does not recruit on their behalf.</p>
+  </footer>
+
+  <dialog id="pay-dialog">
+    <form id="pay-form">
+      <h3>Pay <span data-slot="price">₹20</span></h3>
+      <p>Your email is stored with the payment so you can open the list again if this page is closed.</p>
+      <label>Name <input name="name" autocomplete="name" required minlength="2" maxlength="80"></label>
+      <label>Email <input name="email" type="email" autocomplete="email" required maxlength="120"></label>
+      <p class="dialog-error" data-error hidden></p>
+      <div class="dialog-actions">
+        <button class="pay" type="submit">Continue to payment</button>
+        <button class="text-button" type="button" data-close>Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="recover-dialog">
+    <form id="recover-form" novalidate>
+      <h3>Already paid?</h3>
+      <p>Enter the Payment ID from Razorpay. It starts with <code>pay_</code>.</p>
+      <label>Payment ID <input name="paymentId" required placeholder="pay_AbCdEf12345678" autocomplete="off" spellcheck="false"></label>
+      <label>Email used at checkout <input name="email" type="text" inputmode="email" autocomplete="email" required></label>
+      <p class="dialog-error" data-error hidden></p>
+      <div class="dialog-actions">
+        <button class="pay" type="submit">Confirm and open the list</button>
+        <button class="text-button" type="button" data-close>Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="ready-dialog">
+    <h3>Payment confirmed</h3>
+    <p>The list is open on this page.</p>
+    <p class="payment-id">Payment ID<br><code data-payment-id></code></p>
+    <div class="dialog-actions">
+      <a class="pay" href="#list" data-close>Open the list</a>
+    </div>
+    <p class="fine">Keep the Payment ID. You can open the list again for 24 hours from this browser, or later with Already paid.</p>
+    <button class="text-button" type="button" data-close>Close</button>
+  </dialog>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="/app.js?v=6"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+node_modules/
+.netlify/
+.env
+data/payments.json
+data/grants.json
+data/link-report.json
+lib/workbook-base64.js
+tmp-preview.html
+*.log

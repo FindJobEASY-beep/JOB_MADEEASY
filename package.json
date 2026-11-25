@@ -1,0 +1,25 @@
+{
+  "name": "hiring-file",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sell a downloadable list of companies hiring in India for Rs 20.",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "check-links": "node scripts/check-links.js"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^11.1.11",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "razorpay": "^2.9.6",
+    "serverless-http": "^4.0.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^27.20.1"
+  }
+}

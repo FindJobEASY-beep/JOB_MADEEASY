@@ -1,0 +1,14 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+  command = "node -e \"process.exit(0)\""
+
+[functions]
+  node_bundler = "esbuild"
+  included_files = ["data/companies.json", "data/India_250_Company_Job_Application_Tracker-v9.xlsx"]
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+  force = true

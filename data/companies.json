@@ -1,0 +1,1613 @@
+{
+  "updated": "25 November 2026",
+  "companies": [
+    {
+      "name": "ABB India",
+      "industry": "Engineering & Industrial",
+      "location": "Bengaluru",
+      "url": "https://careers.abb/"
+    },
+    {
+      "name": "Accenture",
+      "industry": "IT Services",
+      "location": "Bengaluru",
+      "url": "https://www.accenture.com/in-en/careers"
+    },
+    {
+      "name": "Acko",
+      "industry": "Banking & Finance",
+      "location": "Bengaluru",
+      "url": "https://www.acko.com/careers/"
+    },
+    {
+      "name": "Adani Group",
+      "industry": "Telecom & Energy",
+      "location": "Ahmedabad",
+      "url": "https://www.adani.com/careers"
+    },
+    {
+      "name": "Aditya Birla Group",
+      "industry": "Engineering & Industrial",
+      "location": "Mumbai",
+      "url": "https://www.adityabirla.com/careers"
+    },
+    {
+      "name": "Adobe",
+      "industry": "Product & Internet",
+      "location": "Noida",
+      "url": "https://careers.adobe.com/"
+    },
+    {
+      "name": "Air India",
+      "industry": "Travel & Logistics",
+      "location": "Mumbai",
+      "url": "https://www.airindia.com/in/en/careers.html"
+    },
+    {
+      "name": "Airbus",
+      "industry": "Engineering & Industrial",
+      "location": "Bengaluru",
+      "url": "https://www.airbus.com/en/careers"
+    },
+    {
+      "name": "Akasa Air",
+      "industry": "Travel & Logistics",
+      "location": "Mumbai",
+      "url": "https://www.akasaair.com/careers"
+    },
+    {
+      "name": "Amazon",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.amazon.jobs/en/search?country=IND"
+    },
+    {
+      "name": "AMD",
+      "industry": "Engineering & Semiconductors",
+      "location": "Hyderabad",
+      "url": "https://careers.amd.com/"
+    },
+    {
+      "name": "American Express",
+      "industry": "Banking & Finance",
+      "location": "Gurugram",
+      "url": "https://www.americanexpress.com/en-in/careers/"
+    },
+    {
+      "name": "Angel One",
+      "industry": "Banking & Finance",
+      "location": "Mumbai",
+      "url": "https://www.angelone.in/careers"
+    },
+    {
+      "name": "Apollo Hospitals",
+      "industry": "Healthcare",
+      "location": "Chennai",
+      "url": "https://www.apollohospitals.com/corporate/careers"
+    },
+    {
+      "name": "Apple",
+      "industry": "Product & Internet",
+      "location": "Hyderabad",
+      "url": "https://www.apple.com/careers/in/"
+    },
+    {
+      "name": "Applied Materials",
+      "industry": "Engineering & Semiconductors",
+      "location": "Bengaluru",
+      "url": "https://www.appliedmaterials.com/us/en/careers.html"
+    },
+    {
+      "name": "Ashok Leyland",
+      "industry": "Auto & Manufacturing",
+      "location": "Chennai",
+      "url": "https://www.ashokleyland.com/careers"
+    },
+    {
+      "name": "Asian Paints",
+      "industry": "FMCG & Retail",
+      "location": "Mumbai",
+      "url": "https://careers.asianpaints.com/"
+    },
+    {
+      "name": "Atlassian",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.atlassian.com/company/careers"
+    },
+    {
+      "name": "Ather Energy",
+      "industry": "Auto & Manufacturing",
+      "location": "Bengaluru",
+      "url": "https://www.atherenergy.com/careers"
+    },
+    {
+      "name": "Aurobindo Pharma",
+      "industry": "Healthcare",
+      "location": "Hyderabad",
+      "url": "https://www.aurobindo.com/careers/"
+    },
+    {
+      "name": "Axis Bank",
+      "industry": "Banking & Finance",
+      "location": "Mumbai",
+      "url": "https://www.axisbank.com/careers"
+    },
+    {
+      "name": "Bain & Company",
+      "industry": "Consulting",
+      "location": "Bengaluru",
+      "url": "https://www.bain.com/careers/"
+    },
+    {
+      "name": "Bajaj Auto",
+      "industry": "Auto & Manufacturing",
+      "location": "Pune",
+      "url": "https://www.bajajauto.com/careers"
+    },
+    {
+      "name": "Bajaj Finance",
+      "industry": "Banking & Finance",
+      "location": "Pune",
+      "url": "https://www.bajajfinserv.in/careers"
+    },
+    {
+      "name": "Bank of America",
+      "industry": "Banking & Finance",
+      "location": "Mumbai",
+      "url": "https://careers.bankofamerica.com/"
+    },
+    {
+      "name": "Barclays",
+      "industry": "Banking & Finance",
+      "location": "Pune",
+      "url": "https://home.barclays/careers/"
+    },
+    {
+      "name": "Bharat Petroleum",
+      "industry": "Telecom & Energy",
+      "location": "Mumbai",
+      "url": "https://www.bharatpetroleum.in/careers"
+    },
+    {
+      "name": "Bharti Airtel",
+      "industry": "Telecom & Energy",
+      "location": "Gurugram",
+      "url": "https://www.airtel.in/careers"
+    },
+    {
+      "name": "BHEL",
+      "industry": "Engineering & Industrial",
+      "location": "Delhi",
+      "url": "https://careers.bhel.in/"
+    },
+    {
+      "name": "Biocon",
+      "industry": "Healthcare",
+      "location": "Bengaluru",
+      "url": "https://www.biocon.com/careers/"
+    },
+    {
+      "name": "Birlasoft",
+      "industry": "IT Services",
+      "location": "Noida",
+      "url": "https://www.birlasoft.com/careers"
+    },
+    {
+      "name": "Blinkit",
+      "industry": "Product & Internet",
+      "location": "Gurugram",
+      "url": "https://blinkit.com/careers"
+    },
+    {
+      "name": "Blue Dart",
+      "industry": "Travel & Logistics",
+      "location": "Mumbai",
+      "url": "https://www.bluedart.com/careers"
+    },
+    {
+      "name": "Boeing",
+      "industry": "Engineering & Industrial",
+      "location": "Bengaluru",
+      "url": "https://jobs.boeing.com/"
+    },
+    {
+      "name": "Bosch India",
+      "industry": "Auto & Manufacturing",
+      "location": "Bengaluru",
+      "url": "https://www.bosch.in/careers/"
+    },
+    {
+      "name": "Boston Consulting Group",
+      "industry": "Consulting",
+      "location": "Gurugram",
+      "url": "https://careers.bcg.com/"
+    },
+    {
+      "name": "Britannia",
+      "industry": "FMCG & Retail",
+      "location": "Bengaluru",
+      "url": "https://www.britannia.co.in/careers"
+    },
+    {
+      "name": "BrowserStack",
+      "industry": "Product & Internet",
+      "location": "Mumbai",
+      "url": "https://www.browserstack.com/careers"
+    },
+    {
+      "name": "Cadence",
+      "industry": "Engineering & Semiconductors",
+      "location": "Noida",
+      "url": "https://www.cadence.com/en_US/home/company/careers.html"
+    },
+    {
+      "name": "Canva",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.canva.com/careers/"
+    },
+    {
+      "name": "Capgemini",
+      "industry": "IT Services",
+      "location": "Mumbai",
+      "url": "https://www.capgemini.com/in-en/careers/"
+    },
+    {
+      "name": "Cashfree Payments",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.cashfree.com/careers"
+    },
+    {
+      "name": "Chargebee",
+      "industry": "Product & Internet",
+      "location": "Chennai",
+      "url": "https://www.chargebee.com/careers/"
+    },
+    {
+      "name": "Cipla",
+      "industry": "Healthcare",
+      "location": "Mumbai",
+      "url": "https://www.cipla.com/careers/"
+    },
+    {
+      "name": "Cisco",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://careers.cisco.com/"
+    },
+    {
+      "name": "Citi",
+      "industry": "Banking & Finance",
+      "location": "Bengaluru",
+      "url": "https://jobs.citi.com/"
+    },
+    {
+      "name": "CleverTap",
+      "industry": "Product & Internet",
+      "location": "Mumbai",
+      "url": "https://clevertap.com/careers/"
+    },
+    {
+      "name": "Cloudflare",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.cloudflare.com/careers/"
+    },
+    {
+      "name": "Coal India",
+      "industry": "Telecom & Energy",
+      "location": "Kolkata",
+      "url": "https://www.coalindia.in/career-cil/"
+    },
+    {
+      "name": "Coforge",
+      "industry": "IT Services",
+      "location": "Noida",
+      "url": "https://www.coforge.com/careers"
+    },
+    {
+      "name": "Cognizant",
+      "industry": "IT Services",
+      "location": "Bengaluru",
+      "url": "https://careers.cognizant.com/india/en"
+    },
+    {
+      "name": "Colgate-Palmolive",
+      "industry": "FMCG & Retail",
+      "location": "Mumbai",
+      "url": "https://www.colgatepalmolive.com/en-us/careers"
+    },
+    {
+      "name": "Concentrix",
+      "industry": "Analytics & Operations",
+      "location": "Bengaluru",
+      "url": "https://jobs.concentrix.com/"
+    },
+    {
+      "name": "Continental",
+      "industry": "Auto & Manufacturing",
+      "location": "Bengaluru",
+      "url": "https://www.continental.com/en/career/"
+    },
+    {
+      "name": "CRED",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://jobs.lever.co/cred"
+    },
+    {
+      "name": "CrowdStrike",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.crowdstrike.com/en-us/careers/"
+    },
+    {
+      "name": "Cult.fit",
+      "industry": "Healthcare",
+      "location": "Bengaluru",
+      "url": "https://www.cult.fit/careers"
+    },
+    {
+      "name": "Cyient",
+      "industry": "IT Services",
+      "location": "Hyderabad",
+      "url": "https://www.cyient.com/careers"
+    },
+    {
+      "name": "Dabur",
+      "industry": "FMCG & Retail",
+      "location": "Ghaziabad",
+      "url": "https://www.dabur.com/join-us/explore-opportunities"
+    },
+    {
+      "name": "Darwinbox",
+      "industry": "Product & Internet",
+      "location": "Hyderabad",
+      "url": "https://darwinbox.com/careers/"
+    },
+    {
+      "name": "Databricks",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.databricks.com/company/careers"
+    },
+    {
+      "name": "Datadog",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://careers.datadoghq.com/"
+    },
+    {
+      "name": "Decathlon India",
+      "industry": "FMCG & Retail",
+      "location": "Bengaluru",
+      "url": "https://www.decathlon.in/careers"
+    },
+    {
+      "name": "Delhivery",
+      "industry": "Travel & Logistics",
+      "location": "Gurugram",
+      "url": "https://www.delhivery.com/careers"
+    },
+    {
+      "name": "Dell",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://jobs.dell.com/"
+    },
+    {
+      "name": "Deloitte India",
+      "industry": "Consulting",
+      "location": "Mumbai",
+      "url": "https://www.deloitte.com/in/en/careers.html"
+    },
+    {
+      "name": "Deutsche Bank",
+      "industry": "Banking & Finance",
+      "location": "Pune",
+      "url": "https://careers.db.com/"
+    },
+    {
+      "name": "DMart",
+      "industry": "FMCG & Retail",
+      "location": "Mumbai",
+      "url": "https://www.dmartindia.com/careers"
+    },
+    {
+      "name": "Dr. Reddy's Laboratories",
+      "industry": "Healthcare",
+      "location": "Hyderabad",
+      "url": "https://www.drreddys.com/careers/"
+    },
+    {
+      "name": "Dream Sports",
+      "industry": "Product & Internet",
+      "location": "Mumbai",
+      "url": "https://www.dreamsports.group/careers"
+    },
+    {
+      "name": "Druva",
+      "industry": "Product & Internet",
+      "location": "Pune",
+      "url": "https://www.druva.com/about/careers/"
+    },
+    {
+      "name": "EPAM",
+      "industry": "IT Services",
+      "location": "Hyderabad",
+      "url": "https://www.epam.com/careers"
+    },
+    {
+      "name": "Ericsson",
+      "industry": "Engineering & Industrial",
+      "location": "Bengaluru",
+      "url": "https://www.ericsson.com/en/careers"
+    },
+    {
+      "name": "EXL",
+      "industry": "Analytics & Operations",
+      "location": "Gurugram",
+      "url": "https://www.exlservice.com/careers"
+    },
+    {
+      "name": "EY",
+      "industry": "Consulting",
+      "location": "Gurugram",
+      "url": "https://www.ey.com/en_in/careers"
+    },
+    {
+      "name": "Federal Bank",
+      "industry": "Banking & Finance",
+      "location": "Kochi",
+      "url": "https://www.federalbank.co.in/careers"
+    },
+    {
+      "name": "Figma",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.figma.com/careers/"
+    },
+    {
+      "name": "Firstsource",
+      "industry": "Analytics & Operations",
+      "location": "Mumbai",
+      "url": "https://www.firstsource.com/careers/"
+    },
+    {
+      "name": "Flipkart",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.flipkartcareers.com/"
+    },
+    {
+      "name": "Fortinet",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.fortinet.com/corporate/careers"
+    },
+    {
+      "name": "Fortis Healthcare",
+      "industry": "Healthcare",
+      "location": "Gurugram",
+      "url": "https://www.fortishealthcare.com/careers"
+    },
+    {
+      "name": "Fractal",
+      "industry": "Analytics & Operations",
+      "location": "Mumbai",
+      "url": "https://fractal.ai/careers/"
+    },
+    {
+      "name": "Freshworks",
+      "industry": "Product & Internet",
+      "location": "Chennai",
+      "url": "https://www.freshworks.com/company/careers/"
+    },
+    {
+      "name": "Genpact",
+      "industry": "Analytics & Operations",
+      "location": "Gurugram",
+      "url": "https://www.genpact.com/careers"
+    },
+    {
+      "name": "GitHub",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.github.careers/"
+    },
+    {
+      "name": "GlobalLogic",
+      "industry": "IT Services",
+      "location": "Bengaluru",
+      "url": "https://www.globallogic.com/careers/"
+    },
+    {
+      "name": "Go Digit",
+      "industry": "Banking & Finance",
+      "location": "Bengaluru",
+      "url": "https://www.godigit.com/careers"
+    },
+    {
+      "name": "Godrej",
+      "industry": "FMCG & Retail",
+      "location": "Mumbai",
+      "url": "https://www.godrej.com/careers"
+    },
+    {
+      "name": "Goldman Sachs",
+      "industry": "Banking & Finance",
+      "location": "Bengaluru",
+      "url": "https://www.goldmansachs.com/careers"
+    },
+    {
+      "name": "Google",
+      "industry": "Product & Internet",
+      "location": "Hyderabad",
+      "url": "https://www.google.com/about/careers/applications/jobs/results/?location=India"
+    },
+    {
+      "name": "Great Learning",
+      "industry": "Education",
+      "location": "Bengaluru",
+      "url": "https://www.mygreatlearning.com/careers"
+    },
+    {
+      "name": "Groww",
+      "industry": "Banking & Finance",
+      "location": "Bengaluru",
+      "url": "https://groww.in/careers"
+    },
+    {
+      "name": "Gupshup",
+      "industry": "Product & Internet",
+      "location": "Mumbai",
+      "url": "https://www.gupshup.io/careers"
+    },
+    {
+      "name": "HAL",
+      "industry": "Engineering & Industrial",
+      "location": "Bengaluru",
+      "url": "https://hal-india.co.in/careers"
+    },
+    {
+      "name": "Happiest Minds",
+      "industry": "IT Services",
+      "location": "Bengaluru",
+      "url": "https://www.happiestminds.com/careers/"
+    },
+    {
+      "name": "Harman",
+      "industry": "Engineering & Industrial",
+      "location": "Bengaluru",
+      "url": "https://www.harman.com/careers"
+    },
+    {
+      "name": "Hasura",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://hasura.io/careers/"
+    },
+    {
+      "name": "HCLTech",
+      "industry": "IT Services",
+      "location": "Noida",
+      "url": "https://www.hcltech.com/careers"
+    },
+    {
+      "name": "HDFC Bank",
+      "industry": "Banking & Finance",
+      "location": "Mumbai",
+      "url": "https://www.hdfcbank.com/personal/about-us/careers"
+    },
+    {
+      "name": "HDFC Life",
+      "industry": "Banking & Finance",
+      "location": "Mumbai",
+      "url": "https://www.hdfclife.com/hdfc-careers/"
+    },
+    {
+      "name": "Hero MotoCorp",
+      "industry": "Auto & Manufacturing",
+      "location": "Gurugram",
+      "url": "https://www.heromotocorp.com/en-in/company/careers.html"
+    },
+    {
+      "name": "Hexaware",
+      "industry": "IT Services",
+      "location": "Mumbai",
+      "url": "https://hexaware.com/careers/"
+    },
+    {
+      "name": "Hindalco",
+      "industry": "Engineering & Industrial",
+      "location": "Mumbai",
+      "url": "https://www.hindalco.com/careers"
+    },
+    {
+      "name": "Hindustan Petroleum",
+      "industry": "Telecom & Energy",
+      "location": "Mumbai",
+      "url": "https://www.hindustanpetroleum.com/careers"
+    },
+    {
+      "name": "Hindustan Unilever",
+      "industry": "FMCG & Retail",
+      "location": "Mumbai",
+      "url": "https://careers.unilever.com/"
+    },
+    {
+      "name": "Honeywell",
+      "industry": "Engineering & Industrial",
+      "location": "Bengaluru",
+      "url": "https://careers.honeywell.com/"
+    },
+    {
+      "name": "HP",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://jobs.hp.com/"
+    },
+    {
+      "name": "HSBC",
+      "industry": "Banking & Finance",
+      "location": "Mumbai",
+      "url": "https://www.hsbc.com/careers"
+    },
+    {
+      "name": "HubSpot",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.hubspot.com/careers"
+    },
+    {
+      "name": "Hyundai Motor India",
+      "industry": "Auto & Manufacturing",
+      "location": "Chennai",
+      "url": "https://www.hyundai.com/in/en/hyundai-story/career"
+    },
+    {
+      "name": "IBM",
+      "industry": "IT Services",
+      "location": "Bengaluru",
+      "url": "https://www.ibm.com/careers"
+    },
+    {
+      "name": "ICICI Bank",
+      "industry": "Banking & Finance",
+      "location": "Mumbai",
+      "url": "https://www.icicicareers.com/"
+    },
+    {
+      "name": "ICICI Lombard",
+      "industry": "Banking & Finance",
+      "location": "Mumbai",
+      "url": "https://www.icicilombard.com/about-us/careers"
+    },
+    {
+      "name": "ICICI Prudential Life",
+      "industry": "Banking & Finance",
+      "location": "Mumbai",
+      "url": "https://www.iciciprulife.com/about-us/careers.html"
+    },
+    {
+      "name": "Icertis",
+      "industry": "Product & Internet",
+      "location": "Pune",
+      "url": "https://www.icertis.com/company/careers/"
+    },
+    {
+      "name": "IDFC FIRST Bank",
+      "industry": "Banking & Finance",
+      "location": "Mumbai",
+      "url": "https://careers.idfcfirst.bank.in/in/en/home"
+    },
+    {
+      "name": "IKEA India",
+      "industry": "FMCG & Retail",
+      "location": "Hyderabad",
+      "url": "https://www.ikea.com/in/en/this-is-ikea/work-with-us/"
+    },
+    {
+      "name": "Indian Oil",
+      "industry": "Telecom & Energy",
+      "location": "Delhi",
+      "url": "https://iocl.com/careers"
+    },
+    {
+      "name": "IndiGo",
+      "industry": "Travel & Logistics",
+      "location": "Gurugram",
+      "url": "https://www.goindigo.in/careers.html"
+    },
+    {
+      "name": "IndusInd Bank",
+      "industry": "Banking & Finance",
+      "location": "Mumbai",
+      "url": "https://www.indusind.com/in/en/personal/about-us/careers.html"
+    },
+    {
+      "name": "Info Edge",
+      "industry": "Product & Internet",
+      "location": "Noida",
+      "url": "https://careers.infoedge.com/infoedge/jobslist"
+    },
+    {
+      "name": "Infosys",
+      "industry": "IT Services",
+      "location": "Bengaluru",
+      "url": "https://www.infosys.com/careers.html"
+    },
+    {
+      "name": "InMobi",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.inmobi.com/company/careers/"
+    },
+    {
+      "name": "Intel",
+      "industry": "Engineering & Semiconductors",
+      "location": "Bengaluru",
+      "url": "https://jobs.intel.com/"
+    },
+    {
+      "name": "Intellect Design Arena",
+      "industry": "IT Services",
+      "location": "Chennai",
+      "url": "https://www.intellectdesign.com/careers/"
+    },
+    {
+      "name": "Intuit",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.intuit.com/careers/"
+    },
+    {
+      "name": "IQVIA",
+      "industry": "Healthcare",
+      "location": "Bengaluru",
+      "url": "https://jobs.iqvia.com/"
+    },
+    {
+      "name": "ISRO",
+      "industry": "Engineering & Industrial",
+      "location": "Bengaluru",
+      "url": "https://www.isro.gov.in/Careers.html"
+    },
+    {
+      "name": "ITC",
+      "industry": "FMCG & Retail",
+      "location": "Kolkata",
+      "url": "https://www.itcportal.com/careers/index.aspx"
+    },
+    {
+      "name": "ixigo",
+      "industry": "Travel & Logistics",
+      "location": "Gurugram",
+      "url": "https://www.ixigo.com/about/careers"
+    },
+    {
+      "name": "Jio",
+      "industry": "Telecom & Energy",
+      "location": "Navi Mumbai",
+      "url": "https://careers.jio.com/"
+    },
+    {
+      "name": "J.P. Morgan",
+      "industry": "Banking & Finance",
+      "location": "Mumbai",
+      "url": "https://careers.jpmorgan.com/"
+    },
+    {
+      "name": "JSW Group",
+      "industry": "Engineering & Industrial",
+      "location": "Mumbai",
+      "url": "https://www.jsw.in/careers"
+    },
+    {
+      "name": "Jubilant FoodWorks",
+      "industry": "FMCG & Retail",
+      "location": "Noida",
+      "url": "https://www.jubilantfoodworks.com/careers/work-with-us"
+    },
+    {
+      "name": "Juspay",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://juspay.io/careers"
+    },
+    {
+      "name": "Kia India",
+      "industry": "Auto & Manufacturing",
+      "location": "Anantapur",
+      "url": "https://career.kiaindia.net/kiaindia/"
+    },
+    {
+      "name": "Kotak Mahindra Bank",
+      "industry": "Banking & Finance",
+      "location": "Mumbai",
+      "url": "https://www.kotak.bank.in/en/about-us/careers.html"
+    },
+    {
+      "name": "KPIT",
+      "industry": "IT Services",
+      "location": "Pune",
+      "url": "https://www.kpit.com/careers/"
+    },
+    {
+      "name": "KPMG India",
+      "industry": "Consulting",
+      "location": "Mumbai",
+      "url": "https://kpmg.com/in/en/home/careers.html"
+    },
+    {
+      "name": "L&T Technology Services",
+      "industry": "IT Services",
+      "location": "Vadodara",
+      "url": "https://www.ltts.com/careers"
+    },
+    {
+      "name": "Lam Research",
+      "industry": "Engineering & Semiconductors",
+      "location": "Bengaluru",
+      "url": "https://www.lamresearch.com/careers/"
+    },
+    {
+      "name": "Larsen & Toubro",
+      "industry": "Engineering & Industrial",
+      "location": "Mumbai",
+      "url": "https://www.larsentoubro.com/corporate/careers/"
+    },
+    {
+      "name": "Lenskart",
+      "industry": "FMCG & Retail",
+      "location": "Gurugram",
+      "url": "https://www.lenskart.com/careers"
+    },
+    {
+      "name": "LIC",
+      "industry": "Banking & Finance",
+      "location": "Mumbai",
+      "url": "https://licindia.in/careers"
+    },
+    {
+      "name": "LinkedIn",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://careers.linkedin.com/"
+    },
+    {
+      "name": "LTIMindtree",
+      "industry": "IT Services",
+      "location": "Mumbai",
+      "url": "https://www.ltimindtree.com/careers/"
+    },
+    {
+      "name": "Lupin",
+      "industry": "Healthcare",
+      "location": "Mumbai",
+      "url": "https://careers.lupin.com/careers/?locale=en_US"
+    },
+    {
+      "name": "Mahindra & Mahindra",
+      "industry": "Auto & Manufacturing",
+      "location": "Mumbai",
+      "url": "https://www.mahindra.com/careers"
+    },
+    {
+      "name": "MakeMyTrip",
+      "industry": "Travel & Logistics",
+      "location": "Gurugram",
+      "url": "https://careers.makemytrip.com/"
+    },
+    {
+      "name": "Marico",
+      "industry": "FMCG & Retail",
+      "location": "Mumbai",
+      "url": "https://marico.com/india/careers"
+    },
+    {
+      "name": "Maruti Suzuki",
+      "industry": "Auto & Manufacturing",
+      "location": "Gurugram",
+      "url": "https://www.marutisuzuki.com/corporate/careers"
+    },
+    {
+      "name": "Mastercard",
+      "industry": "Banking & Finance",
+      "location": "Pune",
+      "url": "https://careers.mastercard.com/"
+    },
+    {
+      "name": "Mastek",
+      "industry": "IT Services",
+      "location": "Mumbai",
+      "url": "https://www.mastek.com/careers/"
+    },
+    {
+      "name": "Max Healthcare",
+      "industry": "Healthcare",
+      "location": "Delhi",
+      "url": "https://www.maxhealthcare.in/careers"
+    },
+    {
+      "name": "Axis Max Life",
+      "industry": "Banking & Finance",
+      "location": "Delhi",
+      "url": "https://www.axismaxlife.com/careers"
+    },
+    {
+      "name": "McKinsey & Company",
+      "industry": "Consulting",
+      "location": "Gurugram",
+      "url": "https://www.mckinsey.com/careers"
+    },
+    {
+      "name": "Meesho",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.meesho.io/jobs"
+    },
+    {
+      "name": "Mercedes-Benz Research and Development India",
+      "industry": "Auto & Manufacturing",
+      "location": "Bengaluru",
+      "url": "https://www.mbrdi.co.in/careers"
+    },
+    {
+      "name": "Meta",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.metacareers.com/jobs"
+    },
+    {
+      "name": "Micron",
+      "industry": "Engineering & Semiconductors",
+      "location": "Hyderabad",
+      "url": "https://www.micron.com/about/careers"
+    },
+    {
+      "name": "Microsoft",
+      "industry": "Product & Internet",
+      "location": "Hyderabad",
+      "url": "https://careers.microsoft.com/v2/global/en/locations/india.html"
+    },
+    {
+      "name": "Mondelez International",
+      "industry": "FMCG & Retail",
+      "location": "Mumbai",
+      "url": "https://www.mondelezinternational.com/careers/"
+    },
+    {
+      "name": "MongoDB",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.mongodb.com/careers"
+    },
+    {
+      "name": "Morgan Stanley",
+      "industry": "Banking & Finance",
+      "location": "Mumbai",
+      "url": "https://www.morganstanley.com/careers"
+    },
+    {
+      "name": "Mphasis",
+      "industry": "IT Services",
+      "location": "Bengaluru",
+      "url": "https://careers.mphasis.com/"
+    },
+    {
+      "name": "MRF",
+      "industry": "Auto & Manufacturing",
+      "location": "Chennai",
+      "url": "https://www.mrftyres.com/careers"
+    },
+    {
+      "name": "Mu Sigma",
+      "industry": "Analytics & Operations",
+      "location": "Bengaluru",
+      "url": "https://www.mu-sigma.com/careers/"
+    },
+    {
+      "name": "Myntra",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://careers.myntra.com/"
+    },
+    {
+      "name": "Nagarro",
+      "industry": "IT Services",
+      "location": "Gurugram",
+      "url": "https://www.nagarro.com/en/careers"
+    },
+    {
+      "name": "Nestle India",
+      "industry": "FMCG & Retail",
+      "location": "Gurugram",
+      "url": "https://www.nestle.in/jobs"
+    },
+    {
+      "name": "Netflix",
+      "industry": "Product & Internet",
+      "location": "Mumbai",
+      "url": "https://jobs.netflix.com/"
+    },
+    {
+      "name": "Newgen Software",
+      "industry": "IT Services",
+      "location": "Delhi",
+      "url": "https://newgensoft.com/careers/"
+    },
+    {
+      "name": "Nokia",
+      "industry": "Engineering & Industrial",
+      "location": "Bengaluru",
+      "url": "https://www.nokia.com/careers/"
+    },
+    {
+      "name": "NPCI",
+      "industry": "Banking & Finance",
+      "location": "Mumbai",
+      "url": "https://www.npci.org.in/careers"
+    },
+    {
+      "name": "NTPC",
+      "industry": "Telecom & Energy",
+      "location": "Delhi",
+      "url": "https://www.ntpc.co.in/careers"
+    },
+    {
+      "name": "Nucleus Software",
+      "industry": "IT Services",
+      "location": "Noida",
+      "url": "https://www.nucleussoftware.com/careers"
+    },
+    {
+      "name": "Nvidia",
+      "industry": "Engineering & Semiconductors",
+      "location": "Hyderabad",
+      "url": "https://www.nvidia.com/en-in/about-nvidia/careers/"
+    },
+    {
+      "name": "Nykaa",
+      "industry": "FMCG & Retail",
+      "location": "Mumbai",
+      "url": "https://careers.nykaa.com/"
+    },
+    {
+      "name": "Okta",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.okta.com/company/careers/"
+    },
+    {
+      "name": "Ola",
+      "industry": "Travel & Logistics",
+      "location": "Bengaluru",
+      "url": "https://www.olacabs.com/careers"
+    },
+    {
+      "name": "Ola Electric",
+      "industry": "Auto & Manufacturing",
+      "location": "Bengaluru",
+      "url": "https://www.olaelectric.com/careers"
+    },
+    {
+      "name": "ONGC",
+      "industry": "Telecom & Energy",
+      "location": "Dehradun",
+      "url": "https://ongcindia.com/web/eng/career"
+    },
+    {
+      "name": "Optum",
+      "industry": "Healthcare",
+      "location": "Hyderabad",
+      "url": "https://www.optum.com/en/careers.html"
+    },
+    {
+      "name": "Oracle",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.oracle.com/in/corporate/careers/"
+    },
+    {
+      "name": "OYO",
+      "industry": "Travel & Logistics",
+      "location": "Gurugram",
+      "url": "https://www.oyorooms.com/careers"
+    },
+    {
+      "name": "Palo Alto Networks",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://jobs.paloaltonetworks.com/"
+    },
+    {
+      "name": "PayPal",
+      "industry": "Banking & Finance",
+      "location": "Bengaluru",
+      "url": "https://careers.pypl.com/"
+    },
+    {
+      "name": "Paytm",
+      "industry": "Product & Internet",
+      "location": "Noida",
+      "url": "https://paytm.com/careers/"
+    },
+    {
+      "name": "PayU",
+      "industry": "Product & Internet",
+      "location": "Gurugram",
+      "url": "https://corporate.payu.com/careers"
+    },
+    {
+      "name": "PepsiCo",
+      "industry": "FMCG & Retail",
+      "location": "Hyderabad",
+      "url": "https://www.pepsicojobs.com/"
+    },
+    {
+      "name": "Persistent Systems",
+      "industry": "IT Services",
+      "location": "Pune",
+      "url": "https://www.persistent.com/careers/"
+    },
+    {
+      "name": "PharmEasy",
+      "industry": "Healthcare",
+      "location": "Mumbai",
+      "url": "https://pharmeasy.in/careers"
+    },
+    {
+      "name": "Philips",
+      "industry": "Healthcare",
+      "location": "Pune",
+      "url": "https://www.careers.philips.com/"
+    },
+    {
+      "name": "PhonePe",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.phonepe.com/careers/"
+    },
+    {
+      "name": "Pidilite",
+      "industry": "FMCG & Retail",
+      "location": "Mumbai",
+      "url": "https://www.pidilite.com/careers/"
+    },
+    {
+      "name": "Pine Labs",
+      "industry": "Product & Internet",
+      "location": "Noida",
+      "url": "https://www.pinelabs.com/careers"
+    },
+    {
+      "name": "Policybazaar",
+      "industry": "Banking & Finance",
+      "location": "Gurugram",
+      "url": "https://www.policybazaar.com/careers"
+    },
+    {
+      "name": "Postman",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.postman.com/company/careers/"
+    },
+    {
+      "name": "Power Grid",
+      "industry": "Telecom & Energy",
+      "location": "Gurugram",
+      "url": "https://www.powergrid.in/job-opportunities"
+    },
+    {
+      "name": "Practo",
+      "industry": "Healthcare",
+      "location": "Bengaluru",
+      "url": "https://www.practo.com/company/careers"
+    },
+    {
+      "name": "Procter & Gamble",
+      "industry": "FMCG & Retail",
+      "location": "Mumbai",
+      "url": "https://www.pgcareers.com/"
+    },
+    {
+      "name": "Publicis Sapient",
+      "industry": "IT Services",
+      "location": "Gurugram",
+      "url": "https://www.publicissapient.com/careers"
+    },
+    {
+      "name": "PwC India",
+      "industry": "Consulting",
+      "location": "Mumbai",
+      "url": "https://www.pwc.com/gx/en/careers.html"
+    },
+    {
+      "name": "Qualcomm",
+      "industry": "Engineering & Semiconductors",
+      "location": "Hyderabad",
+      "url": "https://careers.qualcomm.com/"
+    },
+    {
+      "name": "Ramco Systems",
+      "industry": "IT Services",
+      "location": "Chennai",
+      "url": "https://www.ramco.com/careers"
+    },
+    {
+      "name": "Rapido",
+      "industry": "Travel & Logistics",
+      "location": "Bengaluru",
+      "url": "https://www.rapido.bike/Careers"
+    },
+    {
+      "name": "Razorpay",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://razorpay.com/jobs/"
+    },
+    {
+      "name": "RBI",
+      "industry": "Banking & Finance",
+      "location": "Mumbai",
+      "url": "https://opportunities.rbi.org.in/"
+    },
+    {
+      "name": "Reckitt",
+      "industry": "FMCG & Retail",
+      "location": "Gurugram",
+      "url": "https://www.reckitt.com/careers/"
+    },
+    {
+      "name": "Red Hat",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.redhat.com/en/jobs"
+    },
+    {
+      "name": "Reliance Industries",
+      "industry": "Telecom & Energy",
+      "location": "Mumbai",
+      "url": "https://www.ril.com/careers"
+    },
+    {
+      "name": "SAIL",
+      "industry": "Engineering & Industrial",
+      "location": "Delhi",
+      "url": "https://www.sail.co.in/en/careers"
+    },
+    {
+      "name": "Salesforce",
+      "industry": "Product & Internet",
+      "location": "Hyderabad",
+      "url": "https://careers.salesforce.com/"
+    },
+    {
+      "name": "Samsung India",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.samsung.com/in/about-us/careers/"
+    },
+    {
+      "name": "SAP",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://jobs.sap.com/"
+    },
+    {
+      "name": "Sasken",
+      "industry": "IT Services",
+      "location": "Bengaluru",
+      "url": "https://www.sasken.com/careers"
+    },
+    {
+      "name": "SBI Life",
+      "industry": "Banking & Finance",
+      "location": "Mumbai",
+      "url": "https://www.sbilife.co.in/en/about-us/careers"
+    },
+    {
+      "name": "Scaler",
+      "industry": "Education",
+      "location": "Bengaluru",
+      "url": "https://www.scaler.com/careers/"
+    },
+    {
+      "name": "Schneider Electric",
+      "industry": "Engineering & Industrial",
+      "location": "Bengaluru",
+      "url": "https://www.se.com/in/en/about-us/careers/"
+    },
+    {
+      "name": "ServiceNow",
+      "industry": "Product & Internet",
+      "location": "Hyderabad",
+      "url": "https://www.servicenow.com/careers.html"
+    },
+    {
+      "name": "ShareChat",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://sharechat.com/careers"
+    },
+    {
+      "name": "Siemens",
+      "industry": "Engineering & Industrial",
+      "location": "Mumbai",
+      "url": "https://www.siemens.com/in/en/company/jobs.html"
+    },
+    {
+      "name": "Simplilearn",
+      "industry": "Education",
+      "location": "Bengaluru",
+      "url": "https://www.simplilearn.com/careers"
+    },
+    {
+      "name": "Snowflake",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://careers.snowflake.com/"
+    },
+    {
+      "name": "Sonata Software",
+      "industry": "IT Services",
+      "location": "Bengaluru",
+      "url": "https://www.sonata-software.com/careers"
+    },
+    {
+      "name": "Standard Chartered",
+      "industry": "Banking & Finance",
+      "location": "Chennai",
+      "url": "https://www.sc.com/en/careers/"
+    },
+    {
+      "name": "State Bank of India",
+      "industry": "Banking & Finance",
+      "location": "Mumbai",
+      "url": "https://sbi.co.in/web/careers"
+    },
+    {
+      "name": "Stripe",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://stripe.com/jobs"
+    },
+    {
+      "name": "Sun Pharmaceutical",
+      "industry": "Healthcare",
+      "location": "Mumbai",
+      "url": "https://sunpharma.com/careers/"
+    },
+    {
+      "name": "Swiggy",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://careers.swiggy.in/"
+    },
+    {
+      "name": "Synopsys",
+      "industry": "Engineering & Semiconductors",
+      "location": "Hyderabad",
+      "url": "https://www.synopsys.com/careers.html"
+    },
+    {
+      "name": "Tata 1mg",
+      "industry": "Healthcare",
+      "location": "Gurugram",
+      "url": "https://www.1mg.com/jobs"
+    },
+    {
+      "name": "Tata Consultancy Services",
+      "industry": "IT Services",
+      "location": "Mumbai",
+      "url": "https://www.tcs.com/careers"
+    },
+    {
+      "name": "Tata Consumer Products",
+      "industry": "FMCG & Retail",
+      "location": "Mumbai",
+      "url": "https://careers.tataconsumer.com/"
+    },
+    {
+      "name": "Tata Elxsi",
+      "industry": "IT Services",
+      "location": "Bengaluru",
+      "url": "https://www.tataelxsi.com/careers"
+    },
+    {
+      "name": "Tata Motors",
+      "industry": "Auto & Manufacturing",
+      "location": "Pune",
+      "url": "https://www.tatamotors.com/careers/"
+    },
+    {
+      "name": "Tata Steel",
+      "industry": "Engineering & Industrial",
+      "location": "Jamshedpur",
+      "url": "https://www.tatasteel.com/careers/"
+    },
+    {
+      "name": "Tata Technologies",
+      "industry": "IT Services",
+      "location": "Pune",
+      "url": "https://www.tatatechnologies.com/careers/"
+    },
+    {
+      "name": "Tech Mahindra",
+      "industry": "IT Services",
+      "location": "Pune",
+      "url": "https://careers.techmahindra.com/"
+    },
+    {
+      "name": "Texas Instruments",
+      "industry": "Engineering & Semiconductors",
+      "location": "Bengaluru",
+      "url": "https://careers.ti.com/"
+    },
+    {
+      "name": "Thoughtworks",
+      "industry": "IT Services",
+      "location": "Bengaluru",
+      "url": "https://www.thoughtworks.com/careers"
+    },
+    {
+      "name": "Tiger Analytics",
+      "industry": "Analytics & Operations",
+      "location": "Chennai",
+      "url": "https://www.tigeranalytics.com/careers/"
+    },
+    {
+      "name": "Titan Company",
+      "industry": "FMCG & Retail",
+      "location": "Bengaluru",
+      "url": "https://www.titancompany.in/careers"
+    },
+    {
+      "name": "TVS Motor",
+      "industry": "Auto & Manufacturing",
+      "location": "Chennai",
+      "url": "https://www.tvsmotor.com/en/about-us/careers/overview"
+    },
+    {
+      "name": "Uber",
+      "industry": "Travel & Logistics",
+      "location": "Hyderabad",
+      "url": "https://www.uber.com/in/en/careers/"
+    },
+    {
+      "name": "UltraTech Cement",
+      "industry": "Engineering & Industrial",
+      "location": "Mumbai",
+      "url": "https://www.ultratechcement.com/corporate/career/overview"
+    },
+    {
+      "name": "Unacademy",
+      "industry": "Education",
+      "location": "Bengaluru",
+      "url": "https://unacademy.com/careers"
+    },
+    {
+      "name": "upGrad",
+      "industry": "Education",
+      "location": "Mumbai",
+      "url": "https://www.upgrad.com/careers/"
+    },
+    {
+      "name": "Upstox",
+      "industry": "Banking & Finance",
+      "location": "Mumbai",
+      "url": "https://upstox.com/careers/"
+    },
+    {
+      "name": "Urban Company",
+      "industry": "Product & Internet",
+      "location": "Gurugram",
+      "url": "https://careers.urbancompany.com/"
+    },
+    {
+      "name": "Vedantu",
+      "industry": "Education",
+      "location": "Bengaluru",
+      "url": "https://www.vedantu.com/careers"
+    },
+    {
+      "name": "Virtusa",
+      "industry": "IT Services",
+      "location": "Hyderabad",
+      "url": "https://www.virtusa.com/careers"
+    },
+    {
+      "name": "Visa",
+      "industry": "Banking & Finance",
+      "location": "Bengaluru",
+      "url": "https://www.visa.co.in/careers.html"
+    },
+    {
+      "name": "Vodafone Idea",
+      "industry": "Telecom & Energy",
+      "location": "Mumbai",
+      "url": "https://www.myvi.in/careers"
+    },
+    {
+      "name": "Walmart Global Tech",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://careers.walmart.com/"
+    },
+    {
+      "name": "Wells Fargo",
+      "industry": "Banking & Finance",
+      "location": "Hyderabad",
+      "url": "https://www.wellsfargojobs.com/"
+    },
+    {
+      "name": "Whatfix",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://whatfix.com/careers/"
+    },
+    {
+      "name": "Wipro",
+      "industry": "IT Services",
+      "location": "Bengaluru",
+      "url": "https://careers.wipro.com/"
+    },
+    {
+      "name": "WNS",
+      "industry": "Analytics & Operations",
+      "location": "Mumbai",
+      "url": "https://www.wns.com/careers"
+    },
+    {
+      "name": "Zensar",
+      "industry": "IT Services",
+      "location": "Pune",
+      "url": "https://www.zensar.com/careers"
+    },
+    {
+      "name": "Zepto",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.zepto.com/s/careers"
+    },
+    {
+      "name": "Zerodha",
+      "industry": "Banking & Finance",
+      "location": "Bengaluru",
+      "url": "https://zerodha.com/careers/"
+    },
+    {
+      "name": "Zoho",
+      "industry": "Product & Internet",
+      "location": "Chennai",
+      "url": "https://www.zoho.com/careers/"
+    },
+    {
+      "name": "Zomato",
+      "industry": "Product & Internet",
+      "location": "Gurugram",
+      "url": "https://careers.smartrecruiters.com/Zomato1"
+    },
+    {
+      "name": "Zoom",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://careers.zoom.us/"
+    },
+    {
+      "name": "ZS",
+      "industry": "Consulting",
+      "location": "Gurugram",
+      "url": "https://www.zs.com/careers"
+    },
+    {
+      "name": "Zscaler",
+      "industry": "Product & Internet",
+      "location": "Bengaluru",
+      "url": "https://www.zscaler.com/careers"
+    }
+  ]
+}
