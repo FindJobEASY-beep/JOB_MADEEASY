@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hiring File admin</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=12">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/admin">Hiring File admin</a>
+    <p class="updated">Confirm a payment to open the list</p>
+  </header>
+  <main>
+    <section class="panel" id="login">
+      <div class="panel-head">
+        <h2>Sign in</h2>
+        <p>Only a confirmed payment opens the company list.</p>
+      </div>
+      <form id="login-form">
+        <label class="search">Password
+          <input name="password" type="password" autocomplete="current-password" required>
+        </label>
+        <p class="dialog-error" data-error hidden></p>
+        <button class="pay" type="submit">Sign in</button>
+      </form>
+    </section>
+
+    <section class="panel" id="desk" hidden>
+      <div class="panel-head">
+        <h2>UPI QR</h2>
+        <p>This UPI ID is encoded in the QR code buyers scan. Payments land in that UPI app.</p>
+      </div>
+      <form id="upi-form">
+        <label class="search">UPI ID
+          <input name="upi" required placeholder="name@bank" autocomplete="off">
+        </label>
+        <label class="search">Name on the QR
+          <input name="name" required maxlength="80" value="The Hiring File">
+        </label>
+        <p class="dialog-error" data-error hidden></p>
+        <button class="pay" type="submit">Save UPI ID</button>
+      </form>
+    </section>
+
+    <section class="panel" id="queue" hidden>
+      <div class="panel-head">
+        <h2>Payments</h2>
+        <p>Confirm only after the ₹20 appears in the UPI app for that reference.</p>
+      </div>
+      <div data-rows></div>
+    </section>
+  </main>
+  <script src="/admin.js?v=1"></script>
+</body>
+</html>

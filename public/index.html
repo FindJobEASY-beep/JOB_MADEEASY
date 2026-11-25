@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Hiring File — 200+ companies currently hiring</title>
-  <meta name="description" content="Pay ₹20 and read the hiring list on this page after payment is confirmed.">
+  <meta name="description" content="Read the hiring list on this page after purchase.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,650&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css?v=12">
 </head>
 <body>
   <header class="top">
@@ -22,35 +22,29 @@
       <div>
         <p class="kicker">View on this page · India</p>
         <h1><span data-slot="count">200+</span> companies currently hiring, with a link to apply at each one.</h1>
-        <p class="lead">Pay <strong data-slot="price">₹20</strong>. When Razorpay confirms the payment, the full list opens on this page: 250 companies, 65 direct job links, openings, and apply portals. There is no file to download or forward.</p>
+        <p class="lead">Scan the QR and pay. The full list opens on this page after the payment is confirmed: 250 companies, 65 direct job links, openings, and apply portals. There is no file to download or forward.</p>
         <div class="hero-actions">
-          <button class="pay" type="button" data-open-pay>Pay ₹20 and unlock the list</button>
+          <button class="pay" type="button" data-open-pay>Unlock the list</button>
           <button class="text-button" type="button" data-open-recover>Already paid?</button>
         </div>
         <p class="status" data-status role="status"></p>
       </div>
 
       <aside class="ticket" aria-label="What you get">
-        <div class="stamp">Opens<br>here</div>
-        <p class="ticket-label">Price</p>
-        <p class="ticket-price" data-slot="price">₹20</p>
+        <p class="ticket-label">Direct careers pages</p>
         <ul>
           <li>65 direct job links</li>
           <li>250 companies and where to apply</li>
           <li>Openings checked, plus apply portals</li>
-          <li>Stays on this page after payment</li>
+          <li>Stays on this page after purchase</li>
         </ul>
-        <p class="fine">No subscription. The list stays open on this browser for 24 hours after payment. There is no Excel or PDF to send to someone else.</p>
+        <p class="fresh">New jobs are added every 3 days.</p>
       </aside>
     </section>
 
     <section class="banner" data-setup hidden>
-      <strong>Payments are not connected on this server yet.</strong>
-      <span>Copy <code>.env.example</code> to <code>.env</code>, add your Razorpay Key ID and Key Secret, then restart. Keys are in the Razorpay dashboard under Account &amp; Settings → API Keys.</span>
-    </section>
-
-    <section class="banner test" data-test hidden>
-      Test mode is on. No real money is charged. In the payment window, open <strong>Cards</strong> and use card <strong>4100 2800 0000 1007</strong>, expiry <strong>12/30</strong>, CVV <strong>123</strong>. On the next page enter OTP <strong>1234</strong>.
+      <strong>The QR code is not ready yet.</strong>
+      <span>Add the UPI ID on the admin page, then refresh this page.</span>
     </section>
 
     <section class="banner test" data-ready hidden>
@@ -64,7 +58,7 @@
       <div><strong data-slot="count">200+</strong><span>companies</span></div>
       <div><strong data-slot="industries">12</strong><span>industries</span></div>
       <div><strong>Direct</strong><span>careers links</span></div>
-      <div><strong data-slot="price">₹20</strong><span>one time</span></div>
+      <div><strong>On this page</strong><span>after purchase</span></div>
     </section>
 
     <section class="panel" id="list" data-list hidden>
@@ -83,10 +77,10 @@
     <section class="panel" id="preview">
       <div class="panel-head">
         <h2>A look inside</h2>
-        <p>Eight companies are open below. The rest of the list opens on this page after payment.</p>
+        <p>Five companies from the direct job links are open below. The rest of the list opens on this page after purchase.</p>
       </div>
       <div class="rows" data-preview></div>
-      <p class="more" data-more>The rest of the list opens here after payment.</p>
+      <p class="more" data-more>The rest of the list opens here after purchase.</p>
     </section>
 
     <section class="steps">
@@ -95,15 +89,15 @@
         <li>
           <span>1</span>
           <div>
-            <h3>Pay ₹20</h3>
-            <p>UPI, debit card, credit card, or netbanking. Razorpay handles the payment.</p>
+            <h3>Scan and pay</h3>
+            <p>A QR code opens for any UPI app. The amount is shown only in that window.</p>
           </div>
         </li>
         <li>
           <span>2</span>
           <div>
             <h3>Wait for confirmation</h3>
-            <p>The list stays locked until Razorpay confirms this exact payment. Closing the window early does not unlock it.</p>
+            <p>The list stays locked until the payment is confirmed. Scanning the QR does not unlock it by itself.</p>
           </div>
         </li>
         <li>
@@ -126,14 +120,14 @@
 
     <section class="warning">
       <h2>Do not pay a stranger for a job</h2>
-      <p>This ₹20 is only for viewing the list on this website. Apply free on the company website. Ignore anyone who asks for a deposit, fee, or OTP in exchange for an offer letter.</p>
+      <p>This payment is only for viewing the list on this website. Apply free on the company website. Ignore anyone who asks for a deposit, fee, or OTP in exchange for an offer letter.</p>
     </section>
 
     <section class="faq">
       <h2>Questions</h2>
       <details open>
         <summary>When do I see the list?</summary>
-        <p>Immediately after Razorpay confirms the payment, on this page. If the browser closes first, choose Already paid and enter the Payment ID from your SMS or email, plus the same email you paid with.</p>
+        <p>After the payment is confirmed, on this page. If the browser closes first, choose Already paid and enter the reference from the QR window, plus the same email.</p>
       </details>
       <details>
         <summary>What is in the list?</summary>
@@ -157,13 +151,27 @@
   <dialog id="pay-dialog">
     <form id="pay-form">
       <h3>Pay <span data-slot="price">₹20</span></h3>
-      <p>Your email is stored with the payment so you can open the list again if this page is closed.</p>
-      <label>Name <input name="name" autocomplete="name" required minlength="2" maxlength="80"></label>
-      <label>Email <input name="email" type="email" autocomplete="email" required maxlength="120"></label>
-      <p class="dialog-error" data-error hidden></p>
-      <div class="dialog-actions">
-        <button class="pay" type="submit">Continue to payment</button>
-        <button class="text-button" type="button" data-close>Cancel</button>
+      <div data-pay-step="details">
+        <p>Enter your name and email. The next step shows the QR code. The list stays locked until the payment is confirmed.</p>
+        <label>Name <input name="name" autocomplete="name" required minlength="2" maxlength="80"></label>
+        <label>Email <input name="email" type="email" autocomplete="email" required maxlength="120"></label>
+        <p class="dialog-error" data-error hidden></p>
+        <div class="dialog-actions">
+          <button class="pay" type="submit">Show QR code</button>
+          <button class="text-button" type="button" data-close>Cancel</button>
+        </div>
+      </div>
+      <div data-pay-step="qr" hidden>
+        <p>Pay <strong data-slot="price">₹20</strong> from any UPI app. Keep this reference.</p>
+        <div class="qr">
+          <canvas data-qr width="220" height="220"></canvas>
+          <p class="reference">Reference <code data-reference></code></p>
+          <p data-upi></p>
+        </div>
+        <p data-wait>Waiting for confirmation. This page opens the list when the payment is confirmed.</p>
+        <div class="dialog-actions">
+          <button class="text-button" type="button" data-close>Close</button>
+        </div>
       </div>
     </form>
   </dialog>
@@ -171,8 +179,8 @@
   <dialog id="recover-dialog">
     <form id="recover-form" novalidate>
       <h3>Already paid?</h3>
-      <p>Enter the Payment ID from Razorpay. It starts with <code>pay_</code>.</p>
-      <label>Payment ID <input name="paymentId" required placeholder="pay_AbCdEf12345678" autocomplete="off" spellcheck="false"></label>
+      <p>Enter the reference from the QR window. It starts with <code>hf</code>.</p>
+      <label>Reference <input name="paymentId" required placeholder="hf followed by 10 characters" autocomplete="off" spellcheck="false"></label>
       <label>Email used at checkout <input name="email" type="text" inputmode="email" autocomplete="email" required></label>
       <p class="dialog-error" data-error hidden></p>
       <div class="dialog-actions">
@@ -193,7 +201,7 @@
     <button class="text-button" type="button" data-close>Close</button>
   </dialog>
 
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-  <script src="/app.js?v=6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
+  <script src="/app.js?v=14"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 const state = {
   priceRupees: 20,
   paymentsReady: false,
+  provider: 'razorpay',
   token: '',
   paymentId: ''
 };
@@ -40,7 +41,7 @@ function renderPreview(catalog) {
       <strong>${escapeHtml(company.name)}</strong>
       <span>${escapeHtml(company.industry)}</span>
       <span>${escapeHtml(company.location)}</span>
-      <a href="${escapeHtml(company.url)}" target="_blank" rel="noopener noreferrer">Careers page</a>
+      <a href="${escapeHtml(company.url)}" target="_blank" rel="noopener noreferrer">Apply</a>
     </div>
   `).join('');
   const locked = Array.from({ length: 3 }, () => `
@@ -52,8 +53,7 @@ function renderPreview(catalog) {
     </div>
   `).join('');
   mount.innerHTML = rows + locked;
-  const hidden = catalog.total - catalog.preview.length;
-  document.querySelector('[data-more]').textContent = `${hidden} more companies are in the file after payment.`;
+  document.querySelector('[data-more]').textContent = 'The rest of the direct job links open on this page after purchase.';
 }
 
 function renderIndustries(industries) {
@@ -100,59 +100,50 @@ async function readError(response) {
   }
 }
 
-async function startCheckout(name, email) {
-  if (typeof Razorpay !== 'function') {
-    throw new Error('Payment checkout could not load. Check your connection and refresh the page.');
-  }
-  const response = await fetch('/api/create-order', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, email })
-  });
-  if (!response.ok) throw new Error(await readError(response));
-  const order = await response.json();
+let pollTimer = 0;
 
-  await new Promise((resolve, reject) => {
-    let finished = false;
-    const checkout = new Razorpay({
-      key: order.keyId,
-      amount: order.amount,
-      currency: order.currency,
-      name: 'The Hiring File',
-      description: 'Companies currently hiring — careers links',
-      order_id: order.orderId,
-      prefill: { name, email },
-      theme: { color: '#9f2d20' },
-      handler: async (payment) => {
-        finished = true;
-        try {
-          const verified = await fetch('/api/verify', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payment)
-          });
-          if (!verified.ok) throw new Error(await readError(verified));
-          remember(await verified.json());
-          resolve();
-        } catch (error) {
-          reject(error);
-        }
-      },
-      modal: {
-        ondismiss() {
-          setTimeout(() => {
-            if (!finished) {
-              reject(new Error('Payment window closed. If money was deducted, choose Already paid and use the Payment ID from your SMS or email.'));
-            }
-          }, 700);
-        }
-      }
+function showQrStep(request) {
+  const details = document.querySelector('[data-pay-step="details"]');
+  const qrStep = document.querySelector('[data-pay-step="qr"]');
+  details.hidden = true;
+  qrStep.hidden = false;
+  document.querySelector('[data-reference]').textContent = request.id;
+  document.querySelector('[data-upi]').textContent = request.upi;
+  const canvas = document.querySelector('[data-qr]');
+  if (typeof QRCode !== 'undefined') {
+    QRCode.toCanvas(canvas, request.link, { width: 220, margin: 1 });
+  }
+  sessionStorage.setItem('hiring-file-pending', JSON.stringify({ id: request.id, email: request.email }));
+  pollStatus(request.id, request.email);
+}
+
+async function pollStatus(id, email) {
+  clearInterval(pollTimer);
+  const check = async () => {
+    const response = await fetch('/api/pay-status', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id, email })
     });
-    checkout.on('payment.failed', (failed) => {
-      reject(new Error(failed.error?.description || 'Payment failed. You can try again.'));
-    });
-    checkout.open();
-  });
+    if (response.status === 402) {
+      clearInterval(pollTimer);
+      sessionStorage.removeItem('hiring-file-pending');
+      const wait = document.querySelector('[data-wait]');
+      if (wait) wait.textContent = await readError(response);
+      return;
+    }
+    if (!response.ok) return;
+    const data = await response.json();
+    if (data.status !== 'approved') return;
+    clearInterval(pollTimer);
+    sessionStorage.removeItem('hiring-file-pending');
+    if (payDialog.open) payDialog.close();
+    remember(data);
+  };
+  await check();
+  pollTimer = setInterval(() => {
+    check().catch(() => {});
+  }, 4000);
 }
 
 const listState = { sheets: [], active: 0 };
@@ -221,11 +212,13 @@ async function loadList() {
 document.querySelectorAll('[data-open-pay]').forEach((button) => {
   button.addEventListener('click', () => {
     if (!state.paymentsReady) {
-      setStatus('Payments are not set up yet. Add Razorpay keys in the .env file and restart the server.');
+      setStatus('The QR code is not ready yet. Add the UPI ID on the admin page, then refresh.');
       document.querySelector('[data-setup]')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
     setStatus('');
+    document.querySelector('[data-pay-step="details"]').hidden = false;
+    document.querySelector('[data-pay-step="qr"]').hidden = true;
     payDialog.showModal();
   });
 });
@@ -263,11 +256,16 @@ document.querySelector('#pay-form').addEventListener('submit', async (event) => 
   submit.disabled = true;
   showFormError(form, '');
   try {
-    payDialog.close();
-    setStatus('Opening the secure payment window…');
-    await startCheckout(form.name.value, form.email.value);
+    const response = await fetch('/api/pay-request', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: form.name.value, email: form.email.value })
+    });
+    if (!response.ok) throw new Error(await readError(response));
+    const request = await response.json();
+    showQrStep({ ...request, email: form.email.value.trim().toLowerCase() });
   } catch (error) {
-    setStatus(error.message);
+    showFormError(form, error.message);
   } finally {
     submit.disabled = false;
   }
@@ -279,9 +277,9 @@ document.querySelector('#recover-form').addEventListener('submit', async (event)
   const submit = form.querySelector('button[type="submit"]');
   const paymentId = form.paymentId.value.trim();
   const email = form.email.value.trim();
-  if (!/^pay_[A-Za-z0-9]{10,}$/.test(paymentId)) {
-    showFormError(form, 'That Payment ID is incomplete. Copy the full ID from the Razorpay email or SMS. It starts with pay_ and then has a long mix of letters and numbers.');
-    setStatus('That Payment ID is incomplete.');
+  if (!/^hf[a-f0-9]{10}$/i.test(paymentId)) {
+    showFormError(form, 'That reference is incomplete. Copy it from the QR window. It starts with hf.');
+    setStatus('That reference is incomplete.');
     return;
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -291,14 +289,19 @@ document.querySelector('#recover-form').addEventListener('submit', async (event)
   submit.disabled = true;
   showFormError(form, '');
   try {
-    const response = await fetch('/api/recover', {
+    const response = await fetch('/api/pay-status', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ paymentId, email })
+      body: JSON.stringify({ id: paymentId, email })
     });
     if (!response.ok) throw new Error(await readError(response));
+    const data = await response.json();
+    if (data.status !== 'approved') {
+      showFormError(form, 'This payment is still waiting to be confirmed.');
+      return;
+    }
     recoverDialog.close();
-    remember(await response.json());
+    remember(data);
   } catch (error) {
     showFormError(form, error.message);
     setStatus(error.message);
@@ -328,17 +331,27 @@ async function init() {
     }
   }
 
+  const pending = sessionStorage.getItem('hiring-file-pending');
+  if (pending && !state.token) {
+    try {
+      const savedRequest = JSON.parse(pending);
+      if (savedRequest.id && savedRequest.email) pollStatus(savedRequest.id, savedRequest.email);
+    } catch {
+      sessionStorage.removeItem('hiring-file-pending');
+    }
+  }
+
   const response = await fetch('/api/catalog');
   const catalog = await response.json();
   state.priceRupees = catalog.priceRupees;
   state.paymentsReady = catalog.paymentsReady;
+  state.provider = catalog.provider || '';
   fillSlots(catalog);
   renderPreview(catalog);
   renderIndustries(catalog.industries);
   document.querySelector('[data-setup]').hidden = catalog.paymentsReady;
-  document.querySelector('[data-test]').hidden = !catalog.testMode;
   document.querySelectorAll('[data-open-pay]').forEach((button) => {
-    button.textContent = `Pay ${rupees(catalog.priceRupees)} and unlock the list`;
+    button.textContent = 'Unlock the list';
   });
 }
 

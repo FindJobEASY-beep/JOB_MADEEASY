@@ -3,6 +3,8 @@ node_modules/
 .env
 data/payments.json
 data/grants.json
+data/requests.json
+data/payee.json
 data/link-report.json
 lib/workbook-base64.js
 tmp-preview.html

@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const express = require('express');
 const Razorpay = require('razorpay');
-const { loadCatalog, industryCounts, previewCompanies } = require('./lib/catalog');
+const { loadCatalog, industryCounts } = require('./lib/catalog');
 const sheets = require('./data/sheets.json');
 
 const PRODUCT = 'hiring-file';
@@ -14,6 +14,8 @@ const TOKEN_TTL_MS = 24 * 60 * 60 * 1000;
 const MAX_DOWNLOADS = 8;
 const GRANTS_FILE = path.join(__dirname, 'data', 'grants.json');
 const PAYMENTS_FILE = path.join(__dirname, 'data', 'payments.json');
+const REQUESTS_FILE = path.join(__dirname, 'data', 'requests.json');
+const PAYEE_FILE = path.join(__dirname, 'data', 'payee.json');
 
 const catalog = loadCatalog();
 const buckets = new Map();
@@ -28,14 +30,22 @@ function pricePaise() {
   return priceRupees() * 100;
 }
 
-function paymentsConfigured() {
+function razorpayConfigured() {
   const keyId = process.env.RAZORPAY_KEY_ID || '';
   const keySecret = process.env.RAZORPAY_KEY_SECRET || '';
   return keyId.startsWith('rzp_') && keySecret.length > 8 && !keyId.includes('your_key');
 }
 
+function paymentProvider() {
+  return razorpayConfigured() ? 'razorpay' : '';
+}
+
+function paymentsConfigured() {
+  return razorpayConfigured();
+}
+
 function razorpayClient() {
-  if (!paymentsConfigured()) return null;
+  if (!razorpayConfigured()) return null;
   return new Razorpay({
     key_id: process.env.RAZORPAY_KEY_ID,
     key_secret: process.env.RAZORPAY_KEY_SECRET
@@ -75,6 +85,17 @@ function cleanEmail(value) {
   const email = String(value || '').trim().toLowerCase();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 120) return '';
   return email;
+}
+
+function cleanUpi(value) {
+  const upi = String(value || '').trim().toLowerCase();
+  if (!/^[a-z0-9][a-z0-9._-]{1,255}@[a-z]{2,64}$/.test(upi)) return '';
+  return upi;
+}
+
+function cleanReference(value) {
+  const reference = String(value || '').trim().toLowerCase();
+  return /^hf[a-f0-9]{10}$/.test(reference) ? reference : '';
 }
 
 function isRazorpayId(value, prefix) {
@@ -151,6 +172,67 @@ async function consumeDownload(token) {
   return grant;
 }
 
+async function currentPayee() {
+  const saved = await readRecord('payee', PAYEE_FILE, null);
+  const upi = cleanUpi(saved?.upi || process.env.UPI_ID || '');
+  const name = cleanName(saved?.name || process.env.UPI_NAME || 'The Hiring File') || 'The Hiring File';
+  return upi ? { upi, name } : null;
+}
+
+function upiLink(payee, reference) {
+  const query = [
+    ['pa', payee.upi],
+    ['pn', payee.name],
+    ['am', priceRupees().toFixed(2)],
+    ['cu', 'INR'],
+    ['tn', `Hiring list ${reference}`]
+  ].map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  return `upi://pay?${query}`;
+}
+
+async function loadRequests() {
+  const list = await readRecord('requests', REQUESTS_FILE, []);
+  return Array.isArray(list) ? list : [];
+}
+
+async function saveRequests(list) {
+  await writeRecord('requests', REQUESTS_FILE, list.slice(-300));
+}
+
+function adminPassword() {
+  const password = String(process.env.ADMIN_PASSWORD || '');
+  return password.length >= 8 ? password : '';
+}
+
+function signAdmin(expiresAt) {
+  const body = String(expiresAt);
+  const signature = crypto.createHmac('sha256', adminPassword()).update(body).digest('hex');
+  return `${body}.${signature}`;
+}
+
+function adminOk(req) {
+  if (!adminPassword()) return false;
+  const header = req.get('authorization') || '';
+  const token = header.startsWith('Bearer ') ? header.slice(7) : '';
+  const [expiresAt, signature] = token.split('.');
+  if (!/^\d+$/.test(expiresAt || '') || !/^[a-f0-9]{64}$/.test(signature || '')) return false;
+  if (Number(expiresAt) < Date.now()) return false;
+  const expected = crypto.createHmac('sha256', adminPassword()).update(expiresAt).digest('hex');
+  return safeEqual(expected, signature);
+}
+
+function publicRequest(request) {
+  return {
+    id: request.id,
+    name: request.name,
+    email: request.email,
+    amount: request.amount,
+    status: request.status,
+    createdAt: request.createdAt,
+    decidedAt: request.decidedAt || ''
+  };
+}
+
 async function logPayment(entry) {
   const payments = await readRecord('payments', PAYMENTS_FILE, []);
   const list = Array.isArray(payments) ? payments : [];
@@ -224,29 +306,166 @@ app.get('/api/health', (req, res) => {
   res.json({ ok: true, companies: catalog.companies.length });
 });
 
-app.get('/api/catalog', (req, res) => {
-  const preview = previewCompanies(catalog.companies, 8);
-  const keyId = process.env.RAZORPAY_KEY_ID || '';
+function cellText(value) {
+  if (value && typeof value === 'object') return value.text || '';
+  return value == null ? '' : String(value);
+}
+
+function directPreview(limit = 5) {
+  const sheet = (sheets.sheets || []).find((item) => item.name === 'Direct job links');
+  if (!sheet) return [];
+  const index = Object.fromEntries(sheet.columns.map((name, position) => [name, position]));
+  const seen = new Set();
+  const picked = [];
+  for (const row of sheet.rows) {
+    const name = cellText(row[index.Company]).trim();
+    const link = row[index['Direct Job Apply Link (Click to Open)']];
+    const url = link && typeof link === 'object' ? String(link.href || '') : '';
+    if (!name || !url.startsWith('http') || seen.has(name)) continue;
+    seen.add(name);
+    picked.push({
+      name,
+      industry: cellText(row[index.Category]),
+      location: cellText(row[index.Location]),
+      url
+    });
+    if (picked.length === limit) break;
+  }
+  return picked;
+}
+
+app.get('/api/catalog', async (req, res) => {
+  const preview = directPreview(5);
+  const payee = await currentPayee();
   res.json({
     total: catalog.companies.length,
     updated: catalog.updated,
     priceRupees: priceRupees(),
     currency: 'INR',
-    paymentsReady: paymentsConfigured(),
-    testMode: keyId.startsWith('rzp_test_'),
+    provider: 'qr',
+    paymentsReady: Boolean(payee),
+    testMode: false,
+    upi: payee ? payee.upi : '',
+    payeeName: payee ? payee.name : '',
     industries: industryCounts(catalog.companies),
     preview
   });
+});
+
+app.post('/api/pay-request', async (req, res) => {
+  if (!allow(`pay:${clientIp(req)}`, 8, 10 * 60 * 1000)) {
+    return res.status(429).json({ error: 'Too many attempts. Wait a few minutes and try again.' });
+  }
+  const payee = await currentPayee();
+  if (!payee) return res.status(503).json({ error: 'The QR code is not ready yet.' });
+  const name = cleanName(req.body?.name);
+  const email = cleanEmail(req.body?.email);
+  if (!name || !email) {
+    return res.status(400).json({ error: 'Enter your name and a valid email.' });
+  }
+  const requests = await loadRequests();
+  const recent = requests.find((item) => (
+    item.email === email && item.status === 'pending' && Date.now() - Date.parse(item.createdAt) < 30 * 60 * 1000
+  ));
+  const request = recent || {
+    id: `hf${crypto.randomBytes(5).toString('hex')}`,
+    name,
+    email,
+    amount: priceRupees(),
+    status: 'pending',
+    createdAt: new Date().toISOString()
+  };
+  if (!recent) {
+    requests.push(request);
+    await saveRequests(requests);
+  }
+  res.json({
+    id: request.id,
+    amount: request.amount,
+    upi: payee.upi,
+    payeeName: payee.name,
+    link: upiLink(payee, request.id),
+    status: request.status
+  });
+});
+
+app.post('/api/pay-status', async (req, res) => {
+  if (!allow(`status:${clientIp(req)}`, 40, 10 * 60 * 1000)) {
+    return res.status(429).json({ error: 'Too many attempts. Wait a few minutes and try again.' });
+  }
+  const id = cleanReference(req.body?.id);
+  const email = cleanEmail(req.body?.email);
+  if (!id || !email) return res.status(400).json({ error: 'Enter the reference and the same email.' });
+  const request = (await loadRequests()).find((item) => item.id === id && item.email === email);
+  if (!request) {
+    return res.status(404).json({ error: 'That reference could not be found for this email.' });
+  }
+  if (request.status === 'rejected') {
+    return res.status(402).json({ error: 'This payment was not confirmed. Pay again and use a new reference.' });
+  }
+  if (request.status !== 'approved') return res.json({ status: 'pending', id });
+  const access = await issueToken(request.id, request.email);
+  res.json({ status: 'approved', ...access });
+});
+
+app.post('/api/admin/login', (req, res) => {
+  if (!allow(`admin:${clientIp(req)}`, 8, 10 * 60 * 1000)) {
+    return res.status(429).json({ error: 'Too many attempts. Wait a few minutes and try again.' });
+  }
+  if (!adminPassword()) return res.status(503).json({ error: 'The admin password is not set on the server.' });
+  const password = String(req.body?.password || '');
+  const left = Buffer.from(password);
+  const right = Buffer.from(adminPassword());
+  if (left.length !== right.length || !crypto.timingSafeEqual(left, right)) {
+    return res.status(401).json({ error: 'That password is not correct.' });
+  }
+  const expiresAt = Date.now() + 12 * 60 * 60 * 1000;
+  res.json({ token: signAdmin(expiresAt), expiresAt });
+});
+
+app.get('/api/admin/requests', async (req, res) => {
+  if (!adminOk(req)) return res.status(401).json({ error: 'Sign in again.' });
+  const payee = await currentPayee();
+  const requests = await loadRequests();
+  res.json({
+    payee: payee || { upi: '', name: '' },
+    requests: requests.slice().reverse().map(publicRequest)
+  });
+});
+
+app.post('/api/admin/payee', async (req, res) => {
+  if (!adminOk(req)) return res.status(401).json({ error: 'Sign in again.' });
+  const upi = cleanUpi(req.body?.upi);
+  const name = cleanName(req.body?.name || 'The Hiring File');
+  if (!upi || !name) {
+    return res.status(400).json({ error: 'Enter a UPI ID such as name@bank, and the name shown on the QR.' });
+  }
+  await writeRecord('payee', PAYEE_FILE, { upi, name });
+  res.json({ upi, name });
+});
+
+app.post('/api/admin/requests/:id/decide', async (req, res) => {
+  if (!adminOk(req)) return res.status(401).json({ error: 'Sign in again.' });
+  const id = cleanReference(req.params.id);
+  const decision = req.body?.decision === 'approved' ? 'approved' : req.body?.decision === 'rejected' ? 'rejected' : '';
+  if (!id || !decision) return res.status(400).json({ error: 'Choose confirm or reject.' });
+  const requests = await loadRequests();
+  const request = requests.find((item) => item.id === id);
+  if (!request) return res.status(404).json({ error: 'That payment request was not found.' });
+  request.status = decision;
+  request.decidedAt = new Date().toISOString();
+  await saveRequests(requests);
+  if (decision === 'approved') await issueToken(request.id, request.email);
+  res.json(publicRequest(request));
 });
 
 app.post('/api/create-order', async (req, res) => {
   if (!allow(`order:${clientIp(req)}`, 8, 10 * 60 * 1000)) {
     return res.status(429).json({ error: 'Too many payment attempts. Wait a few minutes and try again.' });
   }
-  const rp = razorpayClient();
-  if (!rp) {
+  if (!paymentsConfigured()) {
     return res.status(503).json({
-      error: 'Payments are not set up yet. Add Razorpay keys to the .env file and restart the server.'
+      error: 'Payments are not set up yet. Add the payment keys and restart the server.'
     });
   }
 
@@ -254,6 +473,10 @@ app.post('/api/create-order', async (req, res) => {
   const email = cleanEmail(req.body?.email);
   if (!name || !email) {
     return res.status(400).json({ error: 'Enter your name and a valid email. The receipt uses this email.' });
+  }
+  const rp = razorpayClient();
+  if (!rp) {
+    return res.status(503).json({ error: 'Payments are not set up yet.' });
   }
 
   try {
@@ -381,7 +604,8 @@ app.use((error, req, res, next) => {
 
 if (require.main === module) {
   app.listen(PORT, () => {
-    const ready = paymentsConfigured() ? 'Razorpay connected' : 'Razorpay keys missing — preview works, payment does not';
+    const provider = paymentProvider();
+    const ready = provider ? `${provider} connected` : 'Payment keys missing — preview works, payment does not';
     console.log(`The Hiring File is running at http://localhost:${PORT}`);
     console.log(`${catalog.companies.length} companies · ₹${priceRupees()} · ${ready}`);
     if (catalog.companies.length < 200) {

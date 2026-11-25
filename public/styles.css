@@ -129,25 +129,16 @@ a.pay { display: inline-block; text-decoration: none; }
 .ticket li { margin: 8px 0; }
 .ticket-label { margin: 0; color: var(--muted); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; }
 .ticket-price { font-family: Fraunces, Georgia, serif; font-size: 64px; line-height: 1; margin: 0 0 8px; }
-.stamp {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  width: 88px;
-  height: 88px;
-  border: 2px solid var(--red);
-  color: var(--red);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 11px;
-  font-weight: 800;
-  transform: rotate(-8deg);
-}
 .fine { color: var(--muted); font-size: 14px; line-height: 1.45; }
+.fresh {
+  margin: 14px 0 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #e7f5ee;
+  border: 1px solid #b7decc;
+  color: var(--green);
+  font-weight: 700;
+}
 
 .banner {
   margin: 8px 0 18px;
@@ -241,11 +232,17 @@ dialog input {
   border: 1px solid #d5c9b6;
   background: white;
 }
+.qr { display: grid; justify-items: center; gap: 6px; margin: 8px 0; text-align: center; }
+.qr canvas { width: 220px; height: 220px; background: white; border: 1px solid var(--line); border-radius: 12px; }
+.reference { margin: 0; color: var(--ink); font-weight: 700; }
+.admin-table { width: 100%; border-collapse: collapse; background: var(--card); }
+.admin-table th, .admin-table td { border-bottom: 1px solid var(--line); text-align: left; padding: 10px 8px; vertical-align: top; }
+.admin-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.secondary { border: 1px solid var(--line); background: white; color: var(--ink); font-weight: 700; }
 .payment-id code { font-size: 14px; word-break: break-all; }
 .dialog-error { color: var(--red-dark); font-weight: 650; margin: 0; }
 
 @media (max-width: 840px) {
   .hero, .stats, .steps ol, .row, .locked { grid-template-columns: 1fr; }
-  .stamp { position: static; margin-bottom: 8px; }
   .top { flex-direction: column; }
 }
